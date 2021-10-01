@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="JQ.js"></script>
+    <script src="client.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Salary Calculator</h1>
+
+    <div>
+
+        <input type="text" placeholder="First Name" id="firstNameIn">
+        <input type="text" placeholder="Last Name" id="lastNameIn">
+        <input type="text" placeholder="ID" id="idNumberIn">
+        <select id="jobTitleIn">
+            <option hidden selected disabled>Title</option>
+            <option>Registered Nurse</option>
+            <option>Physical Therapist</option>
+            <option>Occupational Therapist</option>
+            <option>Nurse Assistant</option>
+            <option>Other</option>
+        </select>
+        <input type="number" placeholder="Annual Salary" id="salaryIn">
+        <button id="submitButton">SUBMIT</button>
+
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Annual Salary</th>
+            </tr>
+        </thead>
+        <tbody id="target">
+            <!-- Jquery adds here! -->
+        </tbody>
+    </table>
+</body>
+
+</html>
