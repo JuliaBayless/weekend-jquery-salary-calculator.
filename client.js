@@ -1,15 +1,18 @@
 $(readyNow);
 
 function readyNow() {
-    console.log('JQ is Loaded!');
-
     $(`#submitButton`).on(`click`, addEmployeeInformation)
+    $(`#informationList`).on(`click`, `.deleteButton`, deleteEmployee)
 
 } //end readyNow
 
+function deleteEmployee() {
+    console.log('in deleteEmployee');
+    $(this).closest(`tr`).remove();
+}
+
 function addEmployeeInformation() {
     console.log('in addEmployeeInformation');
-    
 
     const employeeIn = {
         firstName: $(`#firstNameIn`).val(),
@@ -26,7 +29,8 @@ function addEmployeeInformation() {
     <td>${employeeIn.id}</td>
     <td>${employeeIn.Title}</td>
     <td>${employeeIn.Salary}</td>
-    </tr>`
+    <td><button class="deleteButton">Delete</button></td>
+    </tr>`;
 
     $(`#informationList`).append(row);
 }
