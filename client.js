@@ -12,9 +12,14 @@ function readyNow() {
 
 //add salaries to total monthly
 function addSalaries() {
-    let employeeSalary = employeeInformation.Salary;
-    console.log('in addSalaries', employeeSalary);
-
+   let totalSalary = 0;
+    for ( let i = 0; i < employeeInfoArray.length; i++){
+        totalSalary += Number(employeeInfoArray[i].Salary)
+    } //end for loop
+    console.log('in addSalaries', totalSalary);
+    let totalMonthly = totalSalary / 12; 
+    $(`#totalMonthly`).text(totalMonthly);
+    
 }
 
 
@@ -55,7 +60,7 @@ function addEmployeeInformation() {
     console.log(employeeInfoArray);
 
 
-    // addSalaries();
+    addSalaries();
     render();
     clearInputs();
 
