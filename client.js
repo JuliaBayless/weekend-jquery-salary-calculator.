@@ -1,4 +1,7 @@
 $(readyNow);
+let employeeInfoArray = [];
+let totalMonthly = 0;
+
 
 function readyNow() {
     $(`#submitButton`).on(`click`, addEmployeeInformation)
@@ -6,31 +9,76 @@ function readyNow() {
 
 } //end readyNow
 
+
+//add salaries to total monthly
+function addSalaries() {
+    let employeeSalary = employeeInformation.Salary;
+    console.log('in addSalaries', employeeSalary);
+
+}
+
+
+//delete employee row with button
 function deleteEmployee() {
     console.log('in deleteEmployee');
     $(this).closest(`tr`).remove();
 }
 
+
+//clear inputs
+function clearInputs() {
+    employeeIn = {
+        firstName: $(`#firstNameIn`).val(''),
+        lastName: $(`#lastNameIn`).val(''),
+        id: $(`#idNumberIn`).val(''),
+        Title: $(`#jobTitleIn`).val(''),
+        Salary: $(`#salaryIn`).val('')
+    }
+}
+
+
+//add employees to array and DOM;
 function addEmployeeInformation() {
     console.log('in addEmployeeInformation');
 
-    const employeeIn = {
+
+    let employeeIn = {
         firstName: $(`#firstNameIn`).val(),
         lastName: $(`#lastNameIn`).val(),
         id: $(`#idNumberIn`).val(),
         Title: $(`#jobTitleIn`).val(),
         Salary: $(`#salaryIn`).val()
     }
-    console.log(employeeIn);
 
-    const row = `<tr>
-    <td>${employeeIn.firstName}</td>
-    <td>${employeeIn.lastName}</td>
-    <td>${employeeIn.id}</td>
-    <td>${employeeIn.Title}</td>
-    <td>${employeeIn.Salary}</td>
+    //push employee input into array
+    employeeInfoArray.push(employeeIn);
+    console.log(employeeInfoArray);
+
+
+    // addSalaries();
+    render();
+    clearInputs();
+
+}
+
+
+
+function render() {
+
+    $(`#informationList`).empty();
+
+    for (let employee of employeeInfoArray) {
+        console.log(employee);
+
+        const rows = `<tr>
+    <td>${employee.firstName}</td>
+    <td>${employee.lastName}</td>
+    <td>${employee.id}</td>
+    <td>${employee.Title}</td>
+    <td>${employee.Salary}</td>
     <td><button class="deleteButton">Delete</button></td>
     </tr>`;
+        $(`#informationList`).append(rows);
+    }
 
-    $(`#informationList`).append(row);
 }
