@@ -1,0 +1,22 @@
+body {
+    background-color: whitesmoke;
+}
+
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    background-color: rgb(3, 49, 156);
+    padding: 3%;
+}
+
+h2 {
+    margin: 30px 10px 30px 10px;
+}
+
+.employee {
+    margin: 30px 10px 10px 10px;
+}
+
+.total {
+    font-weight: bolder;
+}
