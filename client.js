@@ -25,7 +25,7 @@ function render() {
     <td>${employee.id}</td>
     <td>${employee.Title}</td>
     <td>${formatCurrency(employee.Salary)}</td>
-    <td><button class="deleteButton">Delete</button></td>
+    <td><button class="deleteButton btn btn-outline-danger">Delete</button></td>
     </tr>`;
         $(`#informationList`).append(rows);
     }
