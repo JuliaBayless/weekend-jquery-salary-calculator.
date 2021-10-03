@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="style.css">
     <script src="JQ.js"></script>
     <script src="client.js"></script>
-    <title>Document</title>
+    <title>Monthly Salary Calculator</title>
 </head>
 
 <body>
-    <h1>Salary Calculator</h1>
+    <h1>Monthly Salary Calculator</h1>
 
     <h2>Add Employee</h2>
     <div>
@@ -20,15 +20,15 @@
         <input type="text" placeholder="First Name" id="firstNameIn">
         <input type="text" placeholder="Last Name" id="lastNameIn">
         <input type="text" placeholder="ID" id="idNumberIn">
-        <select id="jobTitleIn">
-            <option hidden selected disabled>Title</option>
+        <select id="jobTitleIn" required>
+            <option hidden selected disabled value="">Title</option>
             <option>Registered Nurse</option>
             <option>Physical Therapist</option>
             <option>Occupational Therapist</option>
             <option>Nurse Assistant</option>
             <option>Other</option>
         </select>
-        <input type="text" placeholder="Annual Salary" id="salaryIn">
+        <input type="number" placeholder="Annual Salary" id="salaryIn">
         <button id="submitButton">SUBMIT</button>
 
     </div>
