@@ -20,11 +20,11 @@ function render() {
 
         //add in array info to DOM table
         const rows = `<tr>
-    <td>${employee.firstName}</td>
-    <td>${employee.lastName}</td>
-    <td>${employee.id}</td>
-    <td>${employee.Title}</td>
-    <td>${formatCurrency(employee.Salary)}</td>
+    <td class="td">${employee.firstName}</td>
+    <td class="td">${employee.lastName}</td>
+    <td class="td">${employee.id}</td>
+    <td class="td">${employee.Title}</td>
+    <td class="td">${formatCurrency(employee.Salary)}</td>
     <td><button class="deleteButton btn btn-outline-danger">Delete</button></td>
     </tr>`;
         $(`#informationList`).append(rows);
